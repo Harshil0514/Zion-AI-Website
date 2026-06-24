@@ -207,7 +207,7 @@
             document.getElementById('txtRemarkId').innerText = globalRemarkId;
 
             // Generate your custom dynamic open-banking UPI Link
-            const upiId = "yourupiid@okaxis"; // <-- REPLACE WITH YOUR REAL UPI HANDLE
+            const upiId = "harshilgehlot5678@okhdfcbank"; // <-- REPLACE WITH YOUR REAL UPI HANDLE
             const payeeName = "Zion AI Solutions";
             const upiString = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=7999.00&cu=INR&tn=${globalRemarkId}`;
             
@@ -221,7 +221,7 @@
 
         async function finalizeDatabaseEntry() {
             // Update this configuration URL endpoint to target your Render FastAPI deployment pipeline route
-            const backendUrl = "https://zionai-api.onrender.com/manual-signup";
+            const backendUrl = "https://zionai-website-backend-1.onrender.com/manual-signup";
             
             try {
                 let formData = new FormData();
