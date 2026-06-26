@@ -212,7 +212,8 @@
             const upiString = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=7999.00&cu=INR&tn=${globalRemarkId}`;
             
             // Generate the QR matrix using Google's charts open API
-            document.getElementById('upiQrCode').src = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(upiString)}`;
+            // Replace it with this line:
+            document.getElementById('upiQrCode').src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiString)}`;
             
             // Switch steps inside the workspace panel
             document.getElementById('stepRegistration').classList.add('hidden');
