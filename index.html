@@ -91,40 +91,6 @@
         </section>
     </div>
 
-    <div id="zionPremiumTerminal" class="hidden max-w-7xl mx-auto px-6 py-12 flex-1 w-full flex flex-col">
-        <div class="border border-emerald-500/30 bg-emerald-950/20 rounded-xl p-4 mb-6 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
-                <span class="text-sm tracking-wider font-mono text-emerald-400 uppercase font-semibold">Security Level Cleared // Imperium Node Online</span>
-            </div>
-            <button onclick="window.location.reload()" class="text-xs text-gray-400 hover:text-white underline font-mono">Disconnect Node</button>
-        </div>
-        
-        <h2 class="text-3xl font-bold text-goldPrimary mb-4">IMPERIUM ENGINE CORE WORKSPACE</h2>
-        <p class="text-gray-400 text-sm mb-8">Live execution terminal mapping active asset profiles against macroeconomic stress paradigms.</p>
-        
-        <div class="grid md:grid-cols-3 gap-6 flex-1 min-h-[400px]">
-            <div class="bg-cardBg border border-goldPrimary/20 rounded-xl p-6 flex flex-col justify-between">
-                <h3 class="text-sm font-bold text-goldPrimary tracking-widest uppercase mb-4">Solvency Stress Models</h3>
-                <div class="space-y-4 font-mono text-xs text-gray-400">
-                    <p>[✓] Overnight Capital Shock: 1.42x</p>
-                    <p>[✓] Tier-1 Asset Ratio Liquidation Pool</p>
-                    <p class="text-emerald-400">[RUNNING] Black Swan Matrix Model</p>
-                </div>
-                <button class="w-full mt-6 bg-darkBg border border-goldPrimary/40 text-goldPrimary py-2 rounded text-xs tracking-wider uppercase font-bold hover:bg-goldPrimary hover:text-black transition">Execute Simulation</button>
-            </div>
-            <div class="bg-cardBg border border-goldPrimary/20 rounded-xl p-6 md:col-span-2 flex flex-col justify-between">
-                <h3 class="text-sm font-bold text-goldPrimary tracking-widest uppercase mb-4">Llama-3 Generative Risk Reporting</h3>
-                <div class="bg-darkBg border border-gray-800 p-4 rounded-lg font-mono text-xs text-green-400 flex-1 overflow-y-auto">
-                    > Initializing reactive algorithmic parameters...<br>
-                    > Scanning institutional ledger matrices...<br>
-                    > System Health: Optimal. No liquidation horizons detected inside 18 operational months.<br>
-                    > <span class="animate-pulse">_</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="termsModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
         <div class="bg-cardBg border-2 border-goldPrimary/40 rounded-xl max-w-xl w-full p-6 relative">
             <h3 class="text-xl font-bold text-goldPrimary mb-4">ZION AI CORPORATE CONTRACT RULES</h3>
@@ -292,7 +258,6 @@
             }
         }
 
-        // SYSTEM LOGIN GATEWAY INTERACTION FUNCTION
         async function handleUserLogin(e) {
             e.preventDefault();
             const emailInput = document.getElementById('loginEmail').value;
@@ -307,14 +272,12 @@
                 const result = await response.json();
 
                 if (response.ok && result.status === "approved") {
-                    alert("Security Clearance Verified! Opening System Nodes...");
+                    alert("Security Clearance Verified! Opening System Terminal Nodes...");
                     closeModal('loginModal');
                     
-                    // Drop home marketing display and show premium system interface
-                    document.getElementById('mainWebsiteContent').classList.add('hidden');
-                    document.getElementById('zionPremiumTerminal').classList.remove('hidden');
+                    // REDIRECT TO LIVE STREAMLIT APP ENGINE
+                    window.location.href = "https://zionai-2.onrender.com";
                 } else {
-                    // Displays the 5 to 6 hour alert message dynamically if status is pending
                     alert(`Authentication Alert: ${result.detail || "Profile verification pending manual review."}`);
                 }
             } catch (err) {
